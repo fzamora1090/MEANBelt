@@ -1,0 +1,37 @@
+<p>create-review works!</p>
+<div class="container">
+        <div class="jumbotron">
+            <h3>Create a new review</h3>
+            <hr>
+            <p *ngFor="let error of errors" class="errors">
+                {{error}}
+            </p>
+           
+            <hr>
+            <form (submit)="handleSubmit(newReview)">
+                    <div class="form-group">
+                        
+                        <label >Your Name</label>
+                        <input type="text" class="form-control" name="customer" [(ngModel)]="newReview.customer">
+                    </div>
+                    <label >Stars</label>
+                    <select id="stars" class="form-control" [(ngModel)]="newReview.stars" name="stars">
+                        <option selected>Choose how many stars!</option>
+                        <option name="1">1</option>
+                        <option name="2">2</option>
+                        <option name="3">3</option>
+                        <option name="4">4</option>
+                        <option name="5">5</option>
+
+                    </select>
+                    <div class="form-group">
+                        <label> Description </label>
+                        <input type="text" class="form-control"  name="description" [(ngModel)]="newReview.description">
+                    </div>
+
+                    <button type="submit" class="btn-sm btn-primary">Submit</button>
+                    <button class="m-2 btn-sm btn-secondary" routerLink="/"> Cancel </button>
+    
+                </form>  
+        </div>
+    </div>

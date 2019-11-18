@@ -1,0 +1,30 @@
+<p>new-restaurant works!</p>
+<div class="container">
+        <div class="jumbotron">
+            <h3>Create a new Resteraunt</h3>
+            <hr>
+            <p *ngFor="let error of errors" class="errors">
+                {{error}}
+            </p>
+            <p *ngIf="dupError"  class="errors">
+                Enter a unique name
+            </p>
+           
+            <hr>
+            <form (submit)="handleSubmit(newRestaurant)">
+                    <div class="form-group">
+                        
+                        <label >Name</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="newRestaurant.name">
+                    </div>
+                    <div class="form-group">
+                        <label >Cuisine</label>
+                        <input type="text" class="form-control"  name="cuisine" [(ngModel)]="newRestaurant.cuisine">
+                    </div>
+
+                    <button type="submit" class="btn-sm btn-primary">Submit</button>
+                    <button class="m-2 btn-sm btn-secondary" routerLink="/"> Cancel </button>
+    
+                </form>  
+        </div>
+    </div>
